@@ -56,7 +56,7 @@ public enum HandChoice
     public HandChoice winsAgainst()
     {
         // TODO: implement this.
-    	return CHOICE_MAP.get(name());
+    	return CHOICE_MAP.get(this);
     }
 
     /**
