@@ -94,7 +94,7 @@ public class RPSArena
         	String key = entry.getKey();	//finding the abbreviation
         	Contestant temp = getContestant(key);	//using the abbreviation to find contestant
         	if (temp.getChoice().equals(choice)) {	//if the contestant's choice equals param's choice add to the string
-        		ret += key + " - " + temp.toString() + ".";
+        		ret += key + " - " + temp.toString() + "\n";
         	}
         }
         return ret;
