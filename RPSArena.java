@@ -36,8 +36,13 @@ public class RPSArena
     {
         // TODO: implement this.
         // Initialize the CONTESTANT_MAP
+    	CONTESTANT_MAP = new LinkedHashMap<String, Contestant>();
         
         // Populate the CONTESTANT_MAP
+    	CONTESTANT_MAP.put("GEO", Contestant.GEORGE);
+    	CONTESTANT_MAP.put("JIL", Contestant.JILL);
+    	CONTESTANT_MAP.put("MAT", Contestant.MATTHEW);
+    	CONTESTANT_MAP.put("BET", Contestant.BETTY);
     }
     
     /**
@@ -50,6 +55,7 @@ public class RPSArena
     public Contestant getContestant(String key)
     {
         // TODO: implement this.
+    	return CONTESTANT_MAP.get(key);
     }
     
     /**
@@ -63,6 +69,8 @@ public class RPSArena
     public Set<String> getContestantAbbreivations()
     {
         // TODO: implement this.
+    	return CONTESTANT_MAP.keySet();
+    	
     }
     
     /**
@@ -82,7 +90,13 @@ public class RPSArena
         String ret = "";
 
         // TODO: implement this
-        
+        for (Entry<String, Contestant> entry : CONTESTANT_MAP.entrySet()) {
+        	String key = entry.getKey();	//finding the abbreviation
+        	Contestant temp = getContestant(key);	//using the abbreviation to find contestant
+        	if (temp.getChoice().equals(choice)) {	//if the contestant's choice equals param's choice add to the string
+        		ret += key + " - " + temp.toString() + ".";
+        	}
+        }
         return ret;
     }
     
@@ -103,11 +117,24 @@ public class RPSArena
         // TODO: implement this.
         
         // Get the Contestant choices:
+    	//The choices
+        HandChoice a = contestantA.getChoice();
+        HandChoice b = contestantB.getChoice();
+        //The choices they win against
+        HandChoice winA = a.winsAgainst();
+        HandChoice winB = b.winsAgainst();
         
         // Check to see if ContestantA's choice type wins against ContestantB's:
-        
+        if (winA == b) {
+        	return contestantA;
+        }
         // Check to see if ContestantB's choice type wins against ContestantA's:
-        
+        else if (winB == a) {
+        	return contestantB;
+        }
         //Tie otherwise (includes choices that are the same):
+        else {
+        	return null;
+        }
     }
 }
