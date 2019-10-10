@@ -20,6 +20,7 @@ public class ContestantInfoTest
     public static void initialize() throws AssertException
     {
     	// TODO: implement.
+    	info = new ContestantInfo(Region.NORTH, HandChoice.ROCK);
     }
 
     /**
@@ -28,6 +29,15 @@ public class ContestantInfoTest
     public void contestantInfoConstructorTest() throws AssertException
     {
     	// TODO: implement.
+    	Region expectedRegion = Region.NORTH;
+    	Region actualRegion = info.getRegion();
+    	
+    	Assert.assertEquals(expectedRegion, actualRegion);
+    	
+    	HandChoice expectedChoice = HandChoice.ROCK;
+    	HandChoice actualChoice = info.getChoice();
+    	
+    	Assert.assertEquals(expectedChoice, actualChoice);
     }
 
     /**
@@ -36,5 +46,9 @@ public class ContestantInfoTest
     public void contestantInfoToStringTest() throws AssertException
     {
     	// TODO: implement.
+    	String expected = "contestant from north throwing rock";
+    	String actual = info.toString();
+    	
+    	Assert.assertEquals(expected, actual);
     }
 }
