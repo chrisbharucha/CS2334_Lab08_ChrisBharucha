@@ -20,7 +20,8 @@ public class TestRunner
 	private static String[] testClasses = {
 			"ContestantTest","ContestantInfoTest","HandChoiceTest","RegionTest","RPSArenaTest"
 	};
-
+	
+	
 	/**
 	 * Main method. DO NOT MODIFY.
 	 *

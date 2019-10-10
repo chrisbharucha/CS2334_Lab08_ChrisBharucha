@@ -68,7 +68,7 @@ public enum HandChoice
     public String toString()
     {
         // TODO: implement this.
-    	//using enum's name method to return a given region in lowercase
+    	//using enum's name method to return a given choice in lowercase
     	return name().toLowerCase();
     }
 }
