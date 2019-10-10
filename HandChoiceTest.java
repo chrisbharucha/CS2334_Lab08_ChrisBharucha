@@ -16,6 +16,9 @@ public class HandChoiceTest
     public void paperEffectiveAgainstTest() throws AssertException
     {
     	// TODO: implement.
+    	HandChoice expected = HandChoice.ROCK;
+    	HandChoice actual = HandChoice.PAPER.winsAgainst();
+    	Assert.assertEquals(expected, actual);
     }
 
     /**
@@ -25,6 +28,9 @@ public class HandChoiceTest
     public void rockEffectiveAgainstTest() throws AssertException
     {
     	// TODO: implement.
+    	HandChoice expected = HandChoice.SCISSORS;
+    	HandChoice actual = HandChoice.ROCK.winsAgainst();
+    	Assert.assertEquals(expected, actual);
     }
 
     /**
@@ -34,6 +40,9 @@ public class HandChoiceTest
     public void scissorsEffectiveAgainstTest() throws AssertException
     {
     	// TODO: implement.
+    	HandChoice expected = HandChoice.PAPER;
+    	HandChoice actual = HandChoice.SCISSORS.winsAgainst();
+    	Assert.assertEquals(expected, actual);
     }
 
     /**
@@ -42,5 +51,8 @@ public class HandChoiceTest
     public void handChoiceToStringTest() throws AssertException
     {
     	// TODO: implement.
+    	Assert.assertEquals("rock", HandChoice.ROCK.toString());
+    	Assert.assertEquals("paper", HandChoice.PAPER.toString());
+    	Assert.assertEquals("scissors", HandChoice.SCISSORS.toString());
     }
 }
