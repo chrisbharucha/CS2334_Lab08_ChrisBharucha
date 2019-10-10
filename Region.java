@@ -38,5 +38,7 @@ public enum Region
     public String toString()
     {
     	 // TODO: implement this.
+    	//using enum's name method to return a given region in lowercase
+    	return name().toLowerCase();
     }
 }

@@ -39,6 +39,12 @@ public enum HandChoice
     static
     {
         // TODO: implement this. You should initialize and populate (load entries into) the CHOICE_MAP.
+    	CHOICE_MAP = new HashMap<HandChoice, HandChoice>(); //initializing hash map
+    	
+    	//loading entries into it
+    	CHOICE_MAP.put(ROCK, SCISSORS);
+    	CHOICE_MAP.put(PAPER, ROCK);
+    	CHOICE_MAP.put(SCISSORS, PAPER);
     }
 
     /**
@@ -50,6 +56,7 @@ public enum HandChoice
     public HandChoice winsAgainst()
     {
         // TODO: implement this.
+    	return CHOICE_MAP.get(name());
     }
 
     /**
@@ -61,5 +68,7 @@ public enum HandChoice
     public String toString()
     {
         // TODO: implement this.
+    	//using enum's name method to return a given region in lowercase
+    	return name().toLowerCase();
     }
 }
